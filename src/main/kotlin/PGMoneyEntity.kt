@@ -4,6 +4,9 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class PGMoneyEntity: JavaPlugin() {
 
+    // Перемеенные для чтения
+    val version = this.description.version //версия плагина
+
     override fun onEnable() {
         // Код
     }
@@ -11,5 +14,6 @@ class PGMoneyEntity: JavaPlugin() {
     override fun onDisable() {
         // Код
     }
+
 
 }
