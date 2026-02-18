@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.mrimax</groupId>
-    <artifactId>PGMoneyEntity</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>ru.mrimax</groupId> <!-- Изменить под место плагина -->
+    <artifactId>PGMoneyEntity</artifactId> <!-- Изменить под название плагина -->
+    <version>1.0-SNAPSHOT</version> <!-- Изменить под версию плагина -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,8 +15,6 @@
         <kotlin.version>2.3.10</kotlin.version> <!-- СЕЙЧАС: Используй Kotlin 1.8.22 / 1.7.22, чтобы плагин ЗАРАБОТАЛ -->
         <!-- Используй актуальную версию плагина: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-shade-plugin -->
         <shade.plugin.version>3.6.1</shade.plugin.version>
-        <main.class>ru.mrimax.EventUtil</main.class>
-        <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     </properties>
 
     <build>
@@ -48,7 +46,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.0</version>
+                <version>${shade.plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
