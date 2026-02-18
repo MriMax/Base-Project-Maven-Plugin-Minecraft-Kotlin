@@ -2,7 +2,7 @@ package ru.mrimax
 
 import org.bukkit.plugin.java.JavaPlugin
 
-class PGMoneyEntity: JavaPlugin() {
+class Test: JavaPlugin() {
 
     // Перемеенные для чтения
     val version = this.description.version //версия плагина
@@ -22,5 +22,6 @@ class PGMoneyEntity: JavaPlugin() {
 
 
 }
+
 
 
