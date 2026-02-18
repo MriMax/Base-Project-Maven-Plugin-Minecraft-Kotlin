@@ -8,6 +8,7 @@ class PGMoneyEntity: JavaPlugin() {
     val version = this.description.version //версия плагина
 
     override fun onEnable() {
+        // Ваш код
         logger.apply {
             info("Плагин включён!")
             info("Версия плагина: $version")
@@ -15,9 +16,11 @@ class PGMoneyEntity: JavaPlugin() {
     }
 
     override fun onDisable() {
+        // Ваш код
         logger.info("Плагин выключился!")
     }
 
 
 }
+
 
