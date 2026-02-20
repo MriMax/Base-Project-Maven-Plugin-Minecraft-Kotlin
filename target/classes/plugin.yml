@@ -1,5 +1,5 @@
-name: Test
-version: 1.0-SNAPSHOT
+name: ${project.artifactId}
+version: ${project.version}
 main: ru.mrimax.Test
 api-version: 1.16
 description: //Описание
@@ -7,3 +7,4 @@ libraries:
   - "org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.10"
 
 author: MriMax
+
