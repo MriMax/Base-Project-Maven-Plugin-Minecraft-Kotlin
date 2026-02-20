@@ -8,6 +8,8 @@ class Test: JavaPlugin() {
     val version = this.description.version //версия плагина
 
     override fun onEnable() {
+        //Инициализация глдавного класса
+        instance = this;
         // Ваш код
         logger.apply {
             info("Плагин включён!")
@@ -20,8 +22,9 @@ class Test: JavaPlugin() {
         logger.info("Плагин выключился!")
     }
 
-
+    companion object { lateinit var instance: Test } //Переодрисачция в класс JavaPlugin
 }
+
 
 
 
