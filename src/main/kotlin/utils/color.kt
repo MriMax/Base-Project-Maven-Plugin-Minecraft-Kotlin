@@ -91,16 +91,19 @@ object color {
         }
         return result
     }
-
     //Метод отправки сообщения
     fun CommandSender.message(msg: String, vararg args: Pair<String, String>) {
         sendMessage (format(msg, *args))
     }
     //Метод отправки много сообщений
-    fun CommandSender.message(messages: List<String>, vararg args: Pair<String, String>) {
-        messages.forEach { msg ->
+    fun CommandSender.message(msg: List<String>, vararg args: Pair<String, String>) {
+        msg.forEach { msg ->
             sendMessage(format(msg, *args))
         }
+    }
+    //Метод возвращения сообщения в метод (bukkit методах и т.д)
+    fun hex(msg: String, vararg args: Pair<String, String>): String {
+        return format(msg, *args)
     }
     //Метод отправки игроку Тайтла на экран
     fun Player.title (msg: String, subMsg: String, fadeIn: Int = 10, stay: Int = 20, fadeOut: Int = 10, vararg args: Pair<String, String>) {
