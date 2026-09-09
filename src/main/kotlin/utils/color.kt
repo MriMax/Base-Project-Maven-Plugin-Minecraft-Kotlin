@@ -1,5 +1,7 @@
 package ru.mrimax.utils
 
+import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Color
@@ -16,7 +18,9 @@ object color {
         var result = applyArgs(text, *args)
         result = applyGradients(result)
         result = convertHexColors(result)
-        return ChatColor.translateAlternateColorCodes('&', result)
+        // ✅ ДОБАВЛЯЕМ ЭТУ СТРОКУ
+        result = ChatColor.translateAlternateColorCodes('&', result)
+        return result
     }
 
     private fun convertHexColors(text: String): String {
@@ -104,6 +108,10 @@ object color {
     //Метод возвращения сообщения в метод (bukkit методах и т.д)
     fun hex(msg: String, vararg args: Pair<String, String>): String {
         return format(msg, *args)
+    }
+    // ✅ Оптимизированная версия (избегает лишней конвертации)
+    fun component(text: String, vararg args: Pair<String, String>): Component {
+        return Component.text(format(text, *args))
     }
     //Метод отправки игроку Тайтла на экран
     fun Player.title (msg: String, subMsg: String, fadeIn: Int = 10, stay: Int = 20, fadeOut: Int = 10, vararg args: Pair<String, String>) {
